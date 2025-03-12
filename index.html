@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshayaa A N - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            position: relative;
+            text-align: center;
+            background: url('banner.jpeg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease-in-out;
+            z-index: 1;
+        }
+        header:hover::before {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .card {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-in-out;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card:hover {
+            transform: translateY(0) scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .skill-item {
+            background: #c8e6c9;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            width: 30%;
+        }
+        .skill-item:hover {
+            transform: scale(1.05);
+            background: #a5d6a7;
+        }
+        .projects-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .project-card {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            width: 30%;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            background: #ffeb3b;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2a5298;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cards = document.querySelectorAll(".card, .skill-item");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Akshayaa A N</h1>
+        <p>Data-driven learner | Aspiring Data Engineer | UI/UX Enthusiast</p>
+    </header>
+    
+    <div class="container">
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p>As a data-driven learner and aspiring data engineer with a passion for UI/UX and holistic development, I aim to contribute to data-driven solutions supporting sustainable development goals.</p>
+        </div>
+        
+        <div class="card" id="skills">
+            <h2><img src="skills-icon.png" alt="Skill Icon" style="width: 30px; height: 30px; vertical-align: middle;"> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Data Engineering</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Scikit-Learn</div>
+                <div class="skill-item">Data Analysis</div>
+                <div class="skill-item">AR/VR</div>
+                <div class="skill-item">Unity Engine</div>
+                <div class="skill-item">.NET Framework</div>
+                <div class="skill-item">CAD Modeling (Fusion 360)</div>
+            </div>
+        </div>
+        <div class="card" id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="location.href='iot.html'">IoT Projects</div>
+                <div class="project-card" onclick="location.href='software.html'">Software Projects</div>
+                <div class="project-card" onclick="location.href='xr.html'">XR Projects</div>
+            </div>
+        </div>
+        
+        
+        <div class="card" id="contact">
+            <h2>Contact</h2>
+            <div class="social-icons">Email: akshayaa3ana@gmail.com</div>
+            <div class="social-icons">
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"> LinkedIn</a>
+                <a href="#"><img src="github.png" alt="GitHub"> GitHub</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Akshayaa A N. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
