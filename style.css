@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    background: url('banner.jpeg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    background: rgba(0, 0, 0, 0.7) url('banner.jpeg') no-repeat center center/cover;
+    background-blend-mode: darken;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.6s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2a5298;
+    color: white;
+    margin-top: 20px;
+}
